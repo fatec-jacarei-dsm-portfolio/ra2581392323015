@@ -3,10 +3,17 @@ const items = document.querySelectorAll(".carousel-item");
 let currentIndex = 0;
 
 function updateCarousel() {
+  const total = items.length;
+
   items.forEach((item, index) => {
-    item.classList.remove("active");
+    item.classList.remove("center", "left", "right");
+    
     if (index === currentIndex) {
-      item.classList.add("active");
+      item.classList.add("center");
+    } else if (index === (currentIndex - 1 + total) % total) {
+      item.classList.add("left");
+    } else if (index === (currentIndex + 1) % total) {
+      item.classList.add("right");
     }
   });
 }
@@ -21,7 +28,8 @@ document.getElementById("prev").addEventListener("click", () => {
   updateCarousel();
 });
 
-updateCarousel(); // Inicializa
+// Inicializa ao carregar
+updateCarousel();
 
 //script botão voltar ao topo
 window.addEventListener("scroll", function () {
@@ -36,4 +44,23 @@ window.addEventListener("scroll", function () {
 // Ação de voltar ao topo
 document.getElementById("scrollToTop").addEventListener("click", function () {
   window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+//script para a troca de imagens na thumb
+document.querySelectorAll('.project-card').forEach(card => {
+  const mainImage = card.querySelector('.main-image');
+  const thumbnails = card.querySelectorAll('.thumb');
+
+  thumbnails.forEach(thumb => {
+    thumb.addEventListener('click', () => {
+      // Atualiza imagem principal
+      mainImage.src = thumb.src;
+
+      // Remove 'active' das outras thumbs
+      thumbnails.forEach(t => t.classList.remove('active'));
+
+      // Adiciona 'active' à thumb clicada
+      thumb.classList.add('active');
+    });
+  });
 });
