@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: linear-gradient(145deg, #1e1e1e 0%, #0d0d0d 100%);
   color: white;
@@ -94,8 +98,8 @@ body {
 }
 
 .hero-img img {
-  width: 220px;
-  height: 220px;
+  width: 350px;
+  height: 350px;
   object-fit: cover;
   border-radius: 20% 50% 30% 50%;
   border: 3px solid #00ffcc;
@@ -203,7 +207,7 @@ body {
   background-color: #0a0a0a;
   color: #fff;
   text-align: center;
-  font-family: 'Fira Code', monospace;
+  font-family: "Fira Code", monospace;
 }
 
 .services h2 {
@@ -278,7 +282,7 @@ body {
   padding: 50px 20px;
   background-color: #0d0d0d;
   color: #f2f2f2;
-  font-family: 'Fira Code', monospace;
+  font-family: "Fira Code", monospace;
 }
 
 .project-card {
@@ -379,7 +383,7 @@ body {
   display: flex;
   justify-content: space-between;
   margin-bottom: 8px;
-  font-family: 'Fira Code', monospace;
+  font-family: "Fira Code", monospace;
   border-bottom: 1px solid #222;
   padding-bottom: 4px;
 }
@@ -395,9 +399,10 @@ body {
 
 .links a {
   color: #00ff88;
-  text-decoration: underline;
+  display: flex;
+  justify-content: flex-end;
+  text-decoration: none;
   font-weight: bold;
-  
 }
 
 .carousel {
@@ -408,7 +413,8 @@ body {
   overflow: hidden;
   perspective: 1000px;
   margin-top: 30px;
-  min-height: 600px;
+  height: 400px;
+  padding-bottom: 40px;
 }
 
 .carousel-item {
@@ -455,7 +461,7 @@ body {
 .habilidades {
   color: white;
   padding: 40px;
-  font-family: 'Fira Code', monospace;
+  font-family: "Fira Code", monospace;
   text-align: center;
 }
 
@@ -523,7 +529,7 @@ footer {
   color: #ccc;
   padding: 40px 20px;
   position: relative;
-  font-family: 'Fira Code', monospace;
+  font-family: "Fira Code", monospace;
   text-align: center;
 }
 
@@ -538,7 +544,8 @@ footer {
   padding: 10px;
 }
 
-.footer-left, .footer-right {
+.footer-left,
+.footer-right {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -582,4 +589,105 @@ footer {
 
 #scrollToTop:hover {
   background-color: #00cc66;
+}
+
+@media (max-width: 600px) {
+  .hero-img img {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .project-card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .skills-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .skills-icons {
+    grid-template-columns: repeat(3, 60px);
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-img img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+  }
+
+  .skills-icons {
+    grid-template-columns: repeat(2, 60px);
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-title {
+    font-size: 1.4rem;
+  }
+
+  .project-subtitle {
+    font-size: 1rem;
+  }
+
+  .project-desc {
+    font-size: 0.95rem;
+  }
+
+  .thumb {
+    width: 60px;
+    height: 45px;
+  }
+
+  .carousel-controls button {
+    font-size: 1.5rem;
+  }
+
+  footer {
+    padding: 20px;
+  }
+
+  .footer-left,
+  .footer-right {
+    align-items: center;
+  }
+
+  .footer-left a,
+  .footer-right a {
+    font-size: 13px;
+  }
 }
