@@ -6,5 +6,5 @@ Portfólio de Projetos - Fatec Jacareí
  
 ---
 
-🔗 [Acesse o Portfólio](LINK_PARA_PORTFOLIO)
-🎤 [Pitch de Apresentação (vídeo)](LINK_PARA_VIDEO_NO_TEAMS)
+🔗 [Acesse o Portfólio] https://andrehventura.github.io/AndreDev/
+🎤 [Pitch de Apresentação (vídeo)] https://youtu.be/kxYpN9IyeIM
